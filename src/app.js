@@ -1,11 +1,27 @@
-import "bootstrap";
-import "./style.css";
 
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+  function generateExcuse() {
+  let who = ['The dog', 'My grandma', 'The mailman', 'My bird'];
+  let action = ['ate', 'peed', 'crushed', 'broke'];
+  let what = ['my homework', 'my phone', 'the car'];
+  let when = [
+    'before the class',
+    'when I was sleeping',
+    'while I was exercising',
+    'during my lunch',
+    'while I was praying'
+  ];
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+  // Función auxiliar para obtener un elemento aleatorio
+  function randomItem(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
+
+  // Construcción de la excusa
+  let excuse = `${randomItem(who)} ${randomItem(action)} ${randomItem(what)} ${randomItem(when)}.`;
+
+  return excuse;
+}
+document.querySelector('.btn').addEventListener('click', () => {
+  document.querySelector('#excuse').innerHTML = generateExcuse();
+});
