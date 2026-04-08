@@ -22,6 +22,15 @@
 
   return excuse;
 }
-document.querySelector('.btn').addEventListener('click', () => {
-  document.querySelector('#excuse').innerHTML = generateExcuse();
+document.addEventListener('DOMContentLoaded', () => {
+  const excuseElement = document.querySelector('#excuse');
+  const button = document.querySelector('.btn');
+
+  // Inicial
+  excuseElement.innerHTML = generateExcuse();
+
+  // Evento
+  button.addEventListener('click', () => {
+    excuseElement.innerHTML = generateExcuse();
+  });
 });
